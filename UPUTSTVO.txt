@@ -1,0 +1,36 @@
+DŽINIĆ CMS — PROIZVODI
+======================
+
+Fajlovi
+-------
+  index.php        stranica CMS-a (kategorije, lista, izmena, dodavanje, brisanje)
+  api.php          sav rad sa bazom (čitanje, izmena, dodavanje, brisanje, otpremanje slika)
+  login.php        prijava lozinkom
+  logout.php       odjava
+  config.php       podaci za bazu i lozinka — OVO POPUNJAVATE
+  bootstrap.php    zajednički kod (konekcija sa bazom, sesija)
+  uploads/         slike proizvoda (14 slika je već tu)
+  dzinic_cms.sql   tabele i početni proizvodi
+
+Postavljanje (cPanel)
+---------------------
+1. U cPanel → "MySQL Databases" napravite bazu i korisnika,
+   i dodelite korisniku sva prava nad bazom.
+   Napomena: na hostingu baza obično ima prefiks, npr. "nalog_dzinic".
+
+2. U phpMyAdmin levo izaberite bazu rapicdevrs_data → Import → dzinic_cms.sql.
+
+3. Otvorite config.php i upišite:
+     db_name, db_user, db_pass  — iz koraka 1
+     admin_lozinka              — lozinka kojom ulazite u CMS
+   Dok lozinka glasi "promeni-me", prijava je zaključana.
+
+4. Otpremite sve fajlove (i folder uploads) na server,
+   npr. u folder public_html/cms/.
+
+5. Folder uploads mora da bude upisiv (dozvole 755).
+
+6. Otvorite https://vas-sajt.rs/cms/ i prijavite se.
+
+Potrebno: PHP 7.4 ili noviji, MySQL 8 ili MariaDB 10.4+.
+Fajl dzinic_cms.sql nemojte ostavljati na serveru posle uvoza.
